@@ -8,7 +8,7 @@
     const formattedDate = formatter.format(today);
     console.log(formattedDate);
 
-    async function getthatotd() {
+    async function getthattotd() {
         const response = await fetch("./totd.json");
         const blob = await response.blob();
         const file = new File([blob], 'totd.json', { type: blob.type });
