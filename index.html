@@ -7,9 +7,12 @@
     });
     const formattedDate = formatter.format(today);
     console.log(formattedDate);
-    const response = await fetch(url);
+    
+    const response = await fetch("./totd.json");
     const blob = await response.blob();
-    const file = new File([blob], name, { type: blob.type });
+    const file = new File([blob], 'totd.json', { type: blob.type });
+    console.log(blob);
+    console.log(file);
 
     file
       .then(file => console.log('File successfully loaded:', file))
